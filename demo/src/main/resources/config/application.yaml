@@ -1,0 +1,29 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-paths:
+      - src/main/java
+      exclude: WEB-INF/**  
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+#属性配置初始化
+person:
+ name: "张三"
+ age: 20
+ lists:
+  - 123
+  - 1232
+  - ${person.age}
+ id: ${random.int}
+#保存日志到磁盘
+logging:
+  file:
+    name: D:/var/log/spring_log.log
+#thymeleaf模板
